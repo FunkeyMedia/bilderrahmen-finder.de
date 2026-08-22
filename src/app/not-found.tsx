@@ -1,0 +1,2 @@
+import Link from "next/link";
+export default function NotFound() { return <main className="not-found shell"><span>404</span><p className="eyebrow">Dieser Rahmen ist leer</p><h1>Die gesuchte Seite ist nicht mehr an ihrem Platz.</h1><p>Deine Finder-Antworten bleiben im Browser erhalten. Du kannst einfach zurück zur Startseite oder direkt weitermachen.</p><div><Link className="button button-primary" href="/">Zur Startseite</Link><Link className="text-link" href="/finder">Finder öffnen</Link></div></main>; }

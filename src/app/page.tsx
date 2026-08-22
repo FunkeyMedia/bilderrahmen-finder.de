@@ -1,69 +1,109 @@
 import Image from "next/image";
+import Link from "next/link";
+import { ProductCard } from "@/components/product-card";
+import { frames } from "@/lib/products";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
+    <main>
+      <section className="hero shell" aria-labelledby="hero-title">
+        <div className="hero-copy">
+          <p className="eyebrow">Weniger suchen. Stimmiger rahmen.</p>
+          <h1 id="hero-title">
+            Dein Bild hat schon eine Geschichte. <em>Wir finden den Rahmen.</em>
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className="hero-intro">
+            Beantworte ein paar einfache Fragen und erhalte eine nachvollziehbare
+            Empfehlung aus 200 ausgewählten Bilderrahmen – passend zu Motiv,
+            Format, Stil und Budget.
           </p>
+          <div className="hero-actions">
+            <Link className="button button-primary" href="/finder">
+              Rahmen-Finder starten <span aria-hidden="true">→</span>
+            </Link>
+            <a className="text-link" href="#so-gehts">
+              Erst verstehen, wie es geht
+            </a>
+          </div>
+          <ul className="trust-line" aria-label="Vorteile des Finders">
+            <li>kostenlos</li>
+            <li>ohne Anmeldung</li>
+            <li>transparent erklärt</li>
+          </ul>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        <div className="hero-art" aria-label="Drei schwarze Bilderrahmen als Beispiel">
+          <div className="art-sun" aria-hidden="true" />
+          <div className="art-caption">
+            <span>01</span>
+            <p>Form, Farbe, Wirkung – als klare Entscheidung statt endloser Liste.</p>
+          </div>
+          <Image
+            src="/hero-frames.png"
+            alt="Drei unterschiedlich ausgerichtete schwarze Bilderrahmen"
+            width={760}
+            height={760}
+            priority
+            sizes="(max-width: 900px) 90vw, 46vw"
+          />
         </div>
-      </main>
-    </div>
+      </section>
+
+      <section className="proof-strip" aria-label="Datenbasis">
+        <div className="shell proof-grid">
+          <p><strong>200</strong><span>Rahmen vorausgewählt</span></p>
+          <p><strong>50</strong><span>Zubehör-Ideen</span></p>
+          <p><strong>100 %</strong><span>regelbasiert erklärt</span></p>
+          <p><strong>0</strong><span>erfundene Testsiegel</span></p>
+        </div>
+      </section>
+
+      <section className="process shell" id="so-gehts" aria-labelledby="process-title">
+        <p className="eyebrow">Vom Motiv zur Entscheidung</p>
+        <h2 id="process-title">Ein guter Rahmen beginnt nicht beim Produkt. Sondern bei dir.</h2>
+        <div className="process-grid">
+          {[
+            ["01", "Du zeigst uns dein Vorhaben", "Motiv, Format, Ort und Stil – nur Fragen, die das Ergebnis wirklich verändern."],
+            ["02", "Wir gewichten, statt zu raten", "Jede Antwort fließt sichtbar in einen Match-Score ein. Ausschlusskriterien verhindern unpassende Treffer."],
+            ["03", "Du bekommst eine klare Auswahl", "Ein bester Treffer, eine preisbewusste Alternative und eine besondere Option – inklusive ehrlicher Grenzen."],
+          ].map(([number, title, body]) => (
+            <article key={number}>
+              <span>{number}</span>
+              <h3>{title}</h3>
+              <p>{body}</p>
+            </article>
+          ))}
+        </div>
+        <Link className="button button-secondary" href="/finder">
+          Jetzt in weniger als einer Minute starten
+        </Link>
+      </section>
+
+      <section className="featured-section shell" aria-labelledby="featured-title">
+        <div className="section-heading">
+          <div><p className="eyebrow">Nicht „die Besten“. Sondern passend.</p><h2 id="featured-title">Drei Beispiele, drei unterschiedliche Aufgaben.</h2></div>
+          <Link href="/vergleich">Produkte vergleichen →</Link>
+        </div>
+        <div className="product-grid">{[frames[1], frames[0], frames.find((product) => product.sizeKey === "50x70") ?? frames[2]].map((product) => <ProductCard product={product} key={product.id} />)}</div>
+        <p className="data-disclaimer">Produktabbildungen sind generische KI-Illustrationen, keine offiziellen Hersteller- oder Amazon-Fotos. Preise und Angaben: Momentaufnahme vom 22.08.2026.</p>
+      </section>
+
+      <section className="trust-section">
+        <div className="shell trust-layout">
+          <div><p className="eyebrow">Vertrauen ohne Siegeltheater</p><h2>Wir zeigen auch, was wir nicht wissen.</h2></div>
+          <div className="trust-points">
+            <article><span>01</span><h3>Keine erfundenen Tests</h3><p>Wir ordnen erfasste Produkteigenschaften ein und behaupten keine eigene Labor- oder Langzeiterfahrung.</p></article>
+            <article><span>02</span><h3>Affiliate offen erklärt</h3><p>Amazon-Links sind gekennzeichnet. Eine mögliche Provision verändert weder Match-Score noch Reihenfolge.</p></article>
+            <article><span>03</span><h3>Unsicherheit bleibt sichtbar</h3><p>Fehlende Maße oder Materialien werden nicht schöngefärbt, sondern als Prüfschritt genannt.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section className="final-cta shell">
+        <p className="eyebrow">Bereit für dein Bild?</p>
+        <h2>Sechs Fragen. Drei verständliche Empfehlungen. Eine bessere Entscheidung.</h2>
+        <div><Link className="button button-primary" href="/finder">Finder starten →</Link><Link className="text-link" href="/so-funktionierts">So rechnen wir</Link></div>
+      </section>
+    </main>
   );
 }
