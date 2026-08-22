@@ -4,7 +4,7 @@ import { SITE_URL } from "@/lib/config";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://bilderrahmen-finder.de"),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "Bilderrahmen-Finder – der passende Rahmen für dein Bild",
     template: "%s | bilderrahmen-finder.de",
