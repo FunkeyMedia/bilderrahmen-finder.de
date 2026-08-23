@@ -12,6 +12,7 @@ Ein transparenter, regelbasierter Produktfinder für Bilderrahmen. Die Website f
 - dynamische Folgefragen, Live-Vorschau, Zurück-Funktion und lokaler Zwischenstand
 - transparente Match-Scores mit verständlicher Begründung
 - drei kuratierte Empfehlungen: bester Treffer, preisbewusste Alternative und Premium-/Spezialoption
+- vollständiges Produktsortiment mit Freitextsuche, Mehrfachfiltern, Trefferzahlen, Sortierung und schrittweisem Nachladen
 - Vergleich von zwei bis vier Produkten mit den wichtigsten Unterschieden zuerst
 - 250 lokale Beispieldatensätze: 200 Rahmen und 50 Zubehörprodukte
 - 250 optimierte, lokal ausgelieferte WebP-Produktillustrationen
@@ -51,7 +52,7 @@ pnpm check
 
 ```text
 src/app/                 Seiten, Metadaten, Sitemap, robots.txt und Event-Endpunkt
-src/components/          Finder, Ergebnisse, Vergleich und wiederverwendbare UI
+src/components/          Finder, Sortiment, Ergebnisse, Vergleich und wiederverwendbare UI
 src/data/products.json   normalisierter Produktkatalog
 src/lib/                 Konfiguration, Typen, Datenzugriff und Match-Logik
 public/products/         optimierte Produktillustrationen

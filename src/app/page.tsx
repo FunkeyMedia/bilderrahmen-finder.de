@@ -21,6 +21,9 @@ export default function Home() {
             <Link className="button button-primary" href="/finder">
               Rahmen-Finder starten <span aria-hidden="true">→</span>
             </Link>
+            <Link className="button button-quiet" href="/sortiment">
+              Alle Rahmen
+            </Link>
             <a className="text-link" href="#so-gehts">
               Erst verstehen, wie es geht
             </a>
@@ -58,17 +61,52 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="pathways shell" aria-labelledby="pathways-title">
+        <div className="section-heading">
+          <div><p className="eyebrow">Zwei Wege zum passenden Rahmen</p><h2 id="pathways-title">Lass dich führen. Oder entdecke selbst.</h2></div>
+        </div>
+        <div className="pathway-grid">
+          <article>
+            <div className="pathway-visual" aria-hidden="true">
+              <Image src="/home/finder-guidance-v1.jpg" alt="" width={1536} height={1024} sizes="(max-width: 860px) 100vw, 48vw" />
+              <span>01</span>
+            </div>
+            <div className="pathway-copy">
+              <p className="pathway-label">Persönliche Empfehlung</p>
+              <h3>Der Rahmen-Finder denkt deine Anforderungen zusammen.</h3>
+              <p>Ideal, wenn du schnell eine nachvollziehbare Auswahl aus drei passenden Produkten möchtest.</p>
+              <Link className="button button-primary" href="/finder">Finder starten →</Link>
+            </div>
+          </article>
+          <article>
+            <div className="pathway-visual" aria-hidden="true">
+              <Image src="/home/frame-catalog-v1.jpg" alt="" width={1536} height={1024} sizes="(max-width: 860px) 100vw, 48vw" />
+              <span>02</span>
+            </div>
+            <div className="pathway-copy">
+              <p className="pathway-label">Alle Rahmen entdecken</p>
+              <h3>Du suchst selbst – mit Filtern statt endlosem Scrollen.</h3>
+              <p>Durchsuche alle 250 Produkte und kombiniere Holz, Schwarz, quadratisch, Format und weitere Eigenschaften.</p>
+              <Link className="button button-secondary" href="/sortiment">Alle Rahmen →</Link>
+            </div>
+          </article>
+        </div>
+      </section>
+
       <section className="process shell" id="so-gehts" aria-labelledby="process-title">
         <p className="eyebrow">Vom Motiv zur Entscheidung</p>
         <h2 id="process-title">Ein guter Rahmen beginnt nicht beim Produkt. Sondern bei dir.</h2>
         <div className="process-grid">
           {[
-            ["01", "Du zeigst uns dein Vorhaben", "Motiv, Format, Ort und Stil – nur Fragen, die das Ergebnis wirklich verändern."],
-            ["02", "Wir gewichten, statt zu raten", "Jede Antwort fließt sichtbar in einen Match-Score ein. Ausschlusskriterien verhindern unpassende Treffer."],
-            ["03", "Du bekommst eine klare Auswahl", "Ein bester Treffer, eine preisbewusste Alternative und eine besondere Option – inklusive ehrlicher Grenzen."],
-          ].map(([number, title, body]) => (
+            ["01", "brief", "Du zeigst uns dein Vorhaben", "Motiv, Format, Ort und Stil – nur Fragen, die das Ergebnis wirklich verändern."],
+            ["02", "score", "Wir gewichten, statt zu raten", "Jede Antwort fließt sichtbar in einen Match-Score ein. Ausschlusskriterien verhindern unpassende Treffer."],
+            ["03", "choice", "Du bekommst eine klare Auswahl", "Ein bester Treffer, eine preisbewusste Alternative und eine besondere Option – inklusive ehrlicher Grenzen."],
+          ].map(([number, icon, title, body]) => (
             <article key={number}>
-              <span>{number}</span>
+              <div className="process-card-top">
+                <span className={`process-icon process-icon-${icon}`} aria-hidden="true"><i /><i /><i /></span>
+                <span className="process-number">{number}</span>
+              </div>
               <h3>{title}</h3>
               <p>{body}</p>
             </article>
