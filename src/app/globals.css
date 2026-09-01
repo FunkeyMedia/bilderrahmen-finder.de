@@ -177,10 +177,10 @@ h1, h2 { font-family: Georgia, "Times New Roman", serif; font-weight: 500; lette
 .product-meta span { padding: 5px 9px; background: var(--paper); border-radius: 999px; font-size: 11px; font-weight: 750; }
 .live-price, .price-unavailable { width: 100%; display: grid; margin-top: 10px; }
 .live-price small { color: #565959; font-size: 11px; font-weight: 400; text-transform: none; letter-spacing: 0; }
-.live-price span, .price-unavailable span { color: var(--ink-soft); font-size: 10px; }
+.live-price > span, .price-unavailable > span { color: var(--ink-soft); font-size: 10px; }
 .price-unavailable strong { font-size: 15px; }
 .amazon-price { display: inline-flex; align-items: flex-start; color: #0f1111; font-family: Arial, "Helvetica Neue", sans-serif; line-height: 1; white-space: nowrap; }
-.amazon-price-whole { font-size: 29px; font-weight: 400; letter-spacing: -.04em; }
+.amazon-price-whole { font-size: 30px; font-weight: 400; letter-spacing: -.04em; }
 .amazon-price-fraction { margin: 1px 2px 0 2px; font-size: 13px; line-height: 1; font-weight: 400; }
 .amazon-price-currency { margin-top: 1px; font-size: 13px; line-height: 1; }
 .product-buy-button { width: 100%; min-height: 50px; justify-content: center; margin-top: auto; }
