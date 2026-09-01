@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import type { ReactNode } from "react";
 import { SITE_URL } from "@/lib/config";
 import "./globals.css";
 
@@ -25,7 +26,7 @@ export const metadata: Metadata = {
   twitter: { card: "summary_large_image", title: "Dein Bild. Der passende Rahmen.", description: "Der transparente Bilderrahmen-Finder.", images: ["/og.png"] },
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   const websiteJsonLd = { "@context": "https://schema.org", "@type": "WebSite", name: "bilderrahmen-finder.de", url: SITE_URL, inLanguage: "de-DE", description: "Transparenter Produktfinder und Kaufberatung für Bilderrahmen." };
   return (
     <html lang="de" data-scroll-behavior="smooth">

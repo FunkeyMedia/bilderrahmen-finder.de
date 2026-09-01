@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ProductCard } from "@/components/product-card";
+import { AmazonProductGrid } from "@/components/amazon-product-grid";
 import { accessories } from "@/lib/products";
 
 export const metadata: Metadata = { title: "Bilderrahmen-Kaufberatung", description: "Formate, Materialien, Passepartouts und Aufhängung verständlich erklärt – ohne erfundene Testsiegel." };
@@ -18,7 +18,7 @@ export default function GuidePage() {
           <section id="aufhaengung"><span className="chapter-number">04</span><h2>Aufhängung: Die Wand entscheidet mit</h2><p>Beton, Gipskarton, Tapete und Fliesen brauchen unterschiedliche Lösungen. Das Gesamtgewicht aus Rahmen, Glas und Motiv muss unter der angegebenen Traglast bleiben. Im Zweifel eine geeignete Befestigung fachlich prüfen lassen.</p></section>
         </article>
       </div>
-      <section className="related-section" id="zubehoer"><div className="section-heading"><div><p className="eyebrow">Ergänzungen</p><h2>Hilfreiches Zubehör</h2></div><p>Aus der erfassten Amazon-Auswahl</p></div><div className="product-grid">{accessories.slice(0, 6).map((product) => <ProductCard product={product} compact key={product.id} />)}</div></section>
+      <section className="related-section" id="zubehoer"><div className="section-heading"><div><p className="eyebrow">Ergänzungen</p><h2>Hilfreiches Zubehör</h2></div><p>Aus der erfassten Amazon-Auswahl</p></div><AmazonProductGrid products={accessories.slice(0, 6)} compact /></section>
     </main>
   );
 }

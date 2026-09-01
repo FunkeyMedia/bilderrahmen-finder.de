@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ProductCard } from "@/components/product-card";
+import { AmazonProductGrid } from "@/components/amazon-product-grid";
 import { frames } from "@/lib/products";
 
 export default function Home() {
@@ -122,7 +122,7 @@ export default function Home() {
           <div><p className="eyebrow">Nicht „die Besten“. Sondern passend.</p><h2 id="featured-title">Drei Beispiele, drei unterschiedliche Aufgaben.</h2></div>
           <Link href="/vergleich">Produkte vergleichen →</Link>
         </div>
-        <div className="product-grid">{[frames[1], frames[0], frames.find((product) => product.sizeKey === "50x70") ?? frames[2]].map((product) => <ProductCard product={product} key={product.id} />)}</div>
+        <AmazonProductGrid products={[frames[1], frames[0], frames.find((product) => product.sizeKey === "50x70") ?? frames[2]]} />
         <p className="data-disclaimer">Produktabbildungen sind generische KI-Illustrationen, keine offiziellen Hersteller- oder Amazon-Fotos. Preise und Angaben: Momentaufnahme vom 22.08.2026.</p>
       </section>
 

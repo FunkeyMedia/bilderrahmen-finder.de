@@ -3,6 +3,7 @@
 import { useDeferredValue, useMemo, useState } from "react";
 import Link from "next/link";
 import { ProductCard } from "@/components/product-card";
+import { useAmazonItems } from "@/lib/use-amazon-items";
 import type { Product } from "@/lib/types";
 
 type FilterKey = "kind" | "material" | "color" | "shape" | "format" | "style" | "budget";
@@ -25,7 +26,7 @@ const INITIAL_FILTERS: Filters = {
 const FILTER_GROUPS: FilterGroup[] = [
   {
     key: "kind",
-    label: "Sortiment",
+    label: "Kategorie",
     options: [
       { value: "frame", label: "Bilderrahmen" },
       { value: "accessory", label: "Zubehör" },
@@ -179,6 +180,7 @@ export function CatalogExperience({ products }: { products: Product[] }) {
 
   const activeFilters = (Object.keys(filters) as FilterKey[]).flatMap((key) => filters[key].map((value) => ({ key, value, label: LABELS.get(`${key}:${value}`) ?? value })));
   const visibleProducts = filteredProducts.slice(0, visibleCount);
+  const { items: amazonItems, loading: amazonLoading } = useAmazonItems(visibleProducts.map((product) => product.asin));
 
   function toggleFilter(key: FilterKey, value: string) {
     setFilters((current) => ({
@@ -201,7 +203,7 @@ export function CatalogExperience({ products }: { products: Product[] }) {
         <div>
           <p className="eyebrow">Selbst entdecken</p>
           <h1>Alle Rahmen. <em>Deine Auswahl.</em></h1>
-          <p>Durchsuche das komplette Sortiment und kombiniere Material, Farbe, Form, Format, Stil und Budget so, wie es für dein Bild passt.</p>
+          <p>Durchsuche alle Rahmen und kombiniere Material, Farbe, Form, Format, Stil und Budget so, wie es für dein Bild passt.</p>
         </div>
         <aside aria-label="Alternative Produktauswahl">
           <span>Lieber führen lassen?</span>
@@ -212,7 +214,7 @@ export function CatalogExperience({ products }: { products: Product[] }) {
 
       <section className="catalog-workspace" aria-labelledby="catalog-title">
         <div className="shell">
-          <h2 className="sr-only" id="catalog-title">Produktsortiment durchsuchen und filtern</h2>
+          <h2 className="sr-only" id="catalog-title">Rahmen durchsuchen und filtern</h2>
           <form className="catalog-search" role="search" onSubmit={(event) => event.preventDefault()}>
             <label htmlFor="catalog-query">Produkte durchsuchen</label>
             <div>
@@ -277,13 +279,13 @@ export function CatalogExperience({ products }: { products: Product[] }) {
 
           <div className="catalog-result-heading" aria-live="polite" aria-atomic="true">
             <p><strong>{filteredProducts.length}</strong> {filteredProducts.length === 1 ? "Treffer" : "Treffer"}</p>
-            <span>{products.length} Produkte im gesamten Sortiment</span>
+            <span>{products.length} Rahmen und Zubehörprodukte insgesamt</span>
           </div>
 
           {visibleProducts.length > 0 ? (
             <>
-              <div className="catalog-grid">
-                {visibleProducts.map((product) => <ProductCard product={product} compact key={product.id} />)}
+              <div className="catalog-grid" aria-busy={amazonLoading}>
+                {visibleProducts.map((product) => <ProductCard product={product} amazonItem={amazonItems[product.asin]} compact key={product.id} />)}
               </div>
               {visibleCount < filteredProducts.length ? (
                 <div className="load-more">
