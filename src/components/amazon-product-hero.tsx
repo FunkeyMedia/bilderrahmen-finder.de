@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { AffiliateLink } from "@/components/affiliate-link";
+import { AmazonPrice } from "@/components/amazon-price";
 import { useAmazonItems } from "@/lib/use-amazon-items";
 import type { Product } from "@/lib/types";
 
@@ -31,7 +32,7 @@ export function AmazonProductHero({ product }: { product: Product }) {
         {live?.price ? (
           <div className="detail-live-price">
             <span>Aktueller Preis bei Amazon</span>
-            <strong>{live.price.displayAmount}</strong>
+            <AmazonPrice amount={live.price.amount} currency={live.price.currency} />
             <small>Zuletzt abgerufen: {new Date(live.fetchedAt).toLocaleString("de-DE", { dateStyle: "short", timeStyle: "short" })} Uhr</small>
           </div>
         ) : <div className="detail-live-price unavailable"><span>Aktueller Preis</span><strong>Bei Amazon prüfen</strong><small>Momentan keine Live-Preisangabe verfügbar.</small></div>}
@@ -41,7 +42,7 @@ export function AmazonProductHero({ product }: { product: Product }) {
           <div><dt>Farbe</dt><dd>{product.colorLabel ?? "nicht eindeutig"}</dd></div>
           <div><dt>Verfügbarkeit</dt><dd>{live?.availability ?? "Auf Amazon prüfen"}</dd></div>
         </dl>
-        <AffiliateLink asin={product.asin} context="product-detail" label="Bei Amazon ansehen" />
+        <AffiliateLink asin={product.asin} context="product-detail" label="Jetzt bei Amazon ansehen" />
         <p className="affiliate-disclosure">Werbung · Affiliate-Link. Als Amazon-Partner verdienen wir an qualifizierten Verkäufen. Für dich ändert sich der Preis nicht.</p>
         <p className="amazon-price-note">Preis und Verfügbarkeit stammen bei erfolgreichem Abruf direkt von Amazon.de und können sich jederzeit ändern. Maßgeblich sind die Angaben auf Amazon.</p>
       </div>

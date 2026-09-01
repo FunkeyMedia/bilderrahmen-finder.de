@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { AffiliateLink } from "@/components/affiliate-link";
+import { AmazonPrice } from "@/components/amazon-price";
 import type { AmazonLiveItem } from "@/lib/amazon-types";
 import type { Product } from "@/lib/types";
 
@@ -25,12 +26,12 @@ export function ProductCard({ product, compact = false, amazonItem }: { product:
         <h3><Link href={`/produkt/${product.id}`}>{productName}</Link></h3>
         <p>{product.summary}</p>
         {amazonItem?.price ? (
-          <div className="live-price"><small>Aktueller Amazon-Preis</small><strong>{amazonItem.price.displayAmount}</strong><span>Stand {new Date(amazonItem.fetchedAt).toLocaleTimeString("de-DE", { hour: "2-digit", minute: "2-digit" })} Uhr</span></div>
+          <div className="live-price"><small>Aktueller Amazon-Preis</small><AmazonPrice amount={amazonItem.price.amount} currency={amazonItem.price.currency} /><span>Stand {new Date(amazonItem.fetchedAt).toLocaleTimeString("de-DE", { hour: "2-digit", minute: "2-digit" })} Uhr</span></div>
         ) : (
           <div className="price-unavailable"><strong>Preis bei Amazon prüfen</strong><span>Keine Echtzeitangabe verfügbar</span></div>
         )}
         <div className="product-meta"><span>{product.material ?? "Material prüfen"}</span></div>
-        <AffiliateLink asin={product.asin} context="product-card" label="Bei Amazon ansehen" className="affiliate-button product-buy-button" />
+        <AffiliateLink asin={product.asin} context="product-card" label="Jetzt bei Amazon ansehen" className="affiliate-button product-buy-button" />
         <Link className="card-link" href={`/produkt/${product.id}`}>Details & Einordnung <span aria-hidden="true">→</span></Link>
       </div>
     </article>
