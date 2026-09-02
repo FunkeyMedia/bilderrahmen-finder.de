@@ -3,7 +3,7 @@ import Link from "next/link";
 import { AmazonProductGrid } from "@/components/amazon-product-grid";
 import { accessories } from "@/lib/products";
 
-export const metadata: Metadata = { title: "Bilderrahmen-Kaufberatung", description: "Formate, Materialien, Passepartouts und Aufhängung verständlich erklärt – ohne erfundene Testsiegel." };
+export const metadata: Metadata = { title: "Bilderrahmen-Kaufberatung", description: "Formate, Materialien, Passepartouts und Aufhängung verständlich erklärt – ohne erfundene Testsiegel.", alternates: { canonical: "/ratgeber" } };
 
 export default function GuidePage() {
   return (

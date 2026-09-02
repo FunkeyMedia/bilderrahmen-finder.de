@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { ComparisonExperience } from "@/components/comparison-experience";
 
-export const metadata: Metadata = { title: "Bilderrahmen vergleichen", description: "Vergleiche zwei bis vier Bilderrahmen anhand der Unterschiede, die wirklich zählen." };
+export const metadata: Metadata = { title: "Bilderrahmen vergleichen", description: "Vergleiche zwei bis vier Bilderrahmen anhand der Unterschiede, die wirklich zählen.", alternates: { canonical: "/vergleich" } };
 
 export default async function ComparePage({ searchParams }: { searchParams: Promise<Record<string, string | string[] | undefined>> }) {
   const params = await searchParams;

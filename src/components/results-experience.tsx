@@ -8,7 +8,6 @@ import type { FinderAnswers } from "@/lib/types";
 export function ResultsExperience({ answers }: { answers: FinderAnswers }) {
   const results = recommendationSet(matchProducts(frames, answers));
   const compareIds = results.map((result) => result.product.id).join(",");
-  const labels = ["Unsere beste Empfehlung für dich", "Die preisbewusste Alternative", "Die Premium- oder Spezialalternative"];
 
   return (
     <main className="results-page shell">
@@ -26,7 +25,7 @@ export function ResultsExperience({ answers }: { answers: FinderAnswers }) {
               <Image src={result.product.image} alt={`${result.product.name} – generische KI-Produktillustration`} fill sizes="(max-width: 800px) 90vw, 38vw" priority={index === 0} />
             </div>
             <div className="result-copy">
-              <p className="result-label">{labels[index]}</p>
+              <p className="result-label">{result.label}</p>
               <div className="score-line"><strong>{result.score}%</strong><span>Match-Score</span></div>
               <h2>{result.product.name}</h2>
               <p>{result.product.summary}</p>

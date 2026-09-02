@@ -84,7 +84,16 @@ export function recommendationSet(results: MatchResult[]) {
   const best = results[0];
   const budget = results.find((result) => result.product.id !== best?.product.id && result.product.priceBand === "budget") ?? results[1];
   const premium = results.find((result) => ![best?.product.id, budget?.product.id].includes(result.product.id) && ["premium", "mid"].includes(result.product.priceBand)) ?? results[2];
-  return [best, budget, premium].filter((result): result is MatchResult => Boolean(result));
+  return [best, budget, premium]
+    .filter((result): result is MatchResult => Boolean(result))
+    .map((result, index) => ({
+      ...result,
+      label: index === 0
+        ? "Unsere beste Empfehlung für dich"
+        : index === 1
+          ? "Die preisbewusste Alternative"
+          : "Weitere passende Alternative",
+    }));
 }
 
 export function answersToParams(answers: FinderAnswers) {

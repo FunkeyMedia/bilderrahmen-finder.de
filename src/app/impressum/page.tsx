@@ -1,3 +1,7 @@
 import type { Metadata } from "next";
-export const metadata: Metadata = { title: "Impressum", robots: { index: false, follow: true } };
-export default function ImprintPage() { return <main className="legal-page shell"><p className="eyebrow">Rechtliche Angaben</p><h1>Impressum</h1><div className="legal-warning"><strong>Vor dem öffentlichen Geschäftsbetrieb zwingend ergänzen und prüfen</strong><p>Dieser Entwurf ist keine individuelle Rechtsberatung. Betreibername, Rechtsform, ladungsfähige Anschrift, vertretungsberechtigte Person, Kontakt- und gegebenenfalls Register- sowie Umsatzsteuerangaben fehlen noch.</p></div><h2>Angaben gemäß § 5 DDG</h2><p>[Betreibername / Unternehmen ergänzen]<br />[Rechtsform ergänzen]<br />[Straße und Hausnummer ergänzen]<br />[PLZ und Ort ergänzen]<br />Deutschland</p><h2>Kontakt</h2><p>E-Mail: kontakt@bilderrahmen-finder.de<br />[Telefonnummer ergänzen, falls erforderlich]</p><h2>Verantwortlich für redaktionelle Inhalte</h2><p>[Name und Anschrift der verantwortlichen Person ergänzen]</p><h2>Verbraucherstreitbeilegung</h2><p>Die anwendbaren Informationspflichten und eine eventuelle Teilnahmebereitschaft müssen durch den Betreiber vor Veröffentlichung geprüft und passend ergänzt werden.</p></main>; }
+
+export const metadata: Metadata = { title: "Impressum", alternates: { canonical: "/impressum" }, robots: { index: false, follow: true } };
+
+export default function ImprintPage() {
+  return <main className="legal-page shell"><p className="eyebrow">Rechtliche Angaben</p><h1>Impressum</h1><h2>Angaben gemäß § 5 DDG</h2><p><strong>Pascal Weyers</strong><br />Birkenwaldstr. 46<br />63179 Obertshausen<br />Deutschland</p><h2>Kontakt</h2><p>E-Mail: <a href="mailto:pascal@funkeymedia.de">pascal@funkeymedia.de</a></p><h2>Umsatzsteuer-Identifikationsnummer</h2><p>Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG: DE299749508</p></main>;
+}

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
-export const metadata: Metadata = { title: "So entstehen unsere Empfehlungen", description: "Gewichtungen, Ausschlussregeln, Datenquellen und Grenzen des Bilderrahmen-Finders transparent erklärt." };
+export const metadata: Metadata = { title: "So entstehen unsere Empfehlungen", description: "Gewichtungen, Ausschlussregeln, Datenquellen und Grenzen des Bilderrahmen-Finders transparent erklärt.", alternates: { canonical: "/so-funktionierts" } };
 
 export default function MethodPage() {
   const weights = [["Einsatz", 28, "Foto, Poster, Galerie, Dokument oder digital"], ["Format", 24, "Exakte Größe vor angrenzenden Formaten"], ["Budget", 18, "Preisbewusst, ausgewogen oder Premium"], ["Stil", 12, "Minimal, warm, klassisch oder ausdrucksstark"], ["Farbe", 8, "Farbwunsch und neutrale Alternativen"], ["Platzierung", 5, "Wand, Tisch oder flexibel"], ["Datenklarheit", 5, "Erkennbare Maße, Materialien und Farben"]];
