@@ -136,3 +136,8 @@ Das Repository in Vercel importieren, die beiden Variablen aus `.env.example` al
 ## Datenstatus
 
 Der redaktionelle Katalog kann unvollständige Merkmale enthalten. Die Website behauptet keine eigenen Produkttests. Als aktuell bezeichnete Preise und Originalbilder werden ausschließlich nach erfolgreichem Abruf über die Amazon Creators API angezeigt; verbindlich sind immer die Angaben auf Amazon.de.
+# Amazon Top 10 auf der Startseite
+
+`src/data/amazon-top-ten.ts` enthält die am 05.09.2026 manuell überprüften ersten zehn Produkte der Amazon.de-Bestseller-Kategorie „Bilderrahmen“ (3312111), in Quellenreihenfolge. Bei Aktualisierungen alle zehn ASINs, Kurzbezeichnungen und Merkmale mit der verlinkten Quelle abgleichen und `checkedAt` sowie das sichtbare Datum in der Komponente aktualisieren. Die Rangliste wird nicht automatisch erneuert und ist kein Testergebnis oder Finder-Score.
+
+`src/components/amazon-top-ten.tsx` zeigt zunächst fünf Karten; über „Alle 10 Bestseller entdecken“ werden die übrigen eingeblendet. Originalbilder und Preise lädt die vorhandene Creators-API über `useAmazonItems`; bei Ausfall werden weder historische Preise noch fremde Produktbilder eingesetzt. Affiliate-ID und Klickmessung verwenden die bestehende zentrale Konfiguration. Die Quellenverknüpfung ist kein Affiliate-Link.

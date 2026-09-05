@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { AmazonProductGrid } from "@/components/amazon-product-grid";
 import { frames } from "@/lib/products";
+import { AmazonTopTen } from "@/components/amazon-top-ten";
 
 export default function Home() {
   return (
@@ -60,6 +61,8 @@ export default function Home() {
           <p><strong>0</strong><span>erfundene Testsiegel</span></p>
         </div>
       </section>
+
+      <AmazonTopTen />
 
       <section className="pathways shell" aria-labelledby="pathways-title">
         <div className="section-heading">
