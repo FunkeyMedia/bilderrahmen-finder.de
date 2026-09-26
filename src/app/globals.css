@@ -434,12 +434,15 @@ h1, h2 { font-family: Georgia, "Times New Roman", serif; font-weight: 500; lette
 .not-found > p:not(.eyebrow) { max-width: 680px; font-size: 18px; color: var(--ink-soft); }
 .not-found > div { display: flex; gap: 24px; align-items: center; flex-wrap: wrap; }
 
-@media (max-width: 860px) {
+@media (max-width: 1050px) {
   .site-header nav { display: none; }
   .mobile-menu { display: block; }
   .mobile-menu summary { min-height: 44px; display: grid; place-items: center; padding: 8px 13px; border: 1.5px solid var(--ink); border-radius: 999px; cursor: pointer; font-weight: 800; list-style: none; }
   .mobile-menu div { position: absolute; right: 0; top: 52px; width: min(280px, 85vw); display: grid; padding: 12px; background: var(--white); border: 1px solid var(--ink); box-shadow: var(--shadow); }
   .mobile-menu a { min-height: 48px; display: flex; align-items: center; padding: 8px; text-decoration: none; font-weight: 800; border-bottom: 1px solid var(--line); }
+}
+
+@media (max-width: 860px) {
   .hero { grid-template-columns: 1fr; padding-top: 54px; }
   .digital-home { grid-template-columns: 1fr; }
   .hero-art { min-height: 460px; }
