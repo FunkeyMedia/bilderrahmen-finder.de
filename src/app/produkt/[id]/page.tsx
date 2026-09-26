@@ -36,7 +36,7 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
   return (
     <main className="product-page shell">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }} />
-      <nav className="breadcrumbs" aria-label="Brotkrumen"><Link href="/">Start</Link><span>›</span><Link href={product.kind === "frame" ? "/finder" : "/ratgeber#zubehoer"}>{product.kind === "frame" ? "Bilderrahmen" : "Zubehör"}</Link><span>›</span><span aria-current="page">{product.brand}</span></nav>
+      <nav className="breadcrumbs" aria-label="Brotkrumen"><Link href="/">Start</Link><span>›</span><Link href={product.purpose === "digital" && product.kind === "frame" ? "/digitale-bilderrahmen" : product.kind === "frame" ? "/sortiment" : "/ratgeber#zubehoer"}>{product.purpose === "digital" && product.kind === "frame" ? "Digitale Bilderrahmen" : product.kind === "frame" ? "Bilderrahmen" : "Zubehör"}</Link><span>›</span><span aria-current="page">{product.brand}</span></nav>
       <AmazonProductHero product={product} />
       <section className="product-evaluation">
         <div><p className="eyebrow">Unsere Einordnung</p><h2>Wofür dieser Rahmen interessant ist</h2><ul className="check-list">{product.pros.map((item) => <li key={item}>{item}</li>)}</ul></div>

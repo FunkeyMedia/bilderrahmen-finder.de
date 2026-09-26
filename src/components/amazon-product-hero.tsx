@@ -37,7 +37,7 @@ export function AmazonProductHero({ product }: { product: Product }) {
           </div>
         ) : <div className="detail-live-price unavailable"><span>Aktueller Preis</span><strong>Bei Amazon prüfen</strong><small>Momentan keine Live-Preisangabe verfügbar.</small></div>}
         <dl className="product-facts">
-          <div><dt>Erfasstes Format</dt><dd>{product.size}</dd></div>
+          <div><dt>{product.purpose === "digital" ? "Displaygröße" : "Erfasstes Format"}</dt><dd>{product.size}</dd></div>
           <div><dt>Material</dt><dd>{product.material ?? "nicht eindeutig"}</dd></div>
           <div><dt>Farbe</dt><dd>{product.colorLabel ?? "nicht eindeutig"}</dd></div>
           <div><dt>Verfügbarkeit</dt><dd>{live?.availability ?? "Auf Amazon prüfen"}</dd></div>

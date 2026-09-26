@@ -30,7 +30,7 @@ export function ProductCard({ product, compact = false, amazonItem }: { product:
         ) : (
           <div className="price-unavailable"><strong>Preis bei Amazon prüfen</strong><span>Keine Echtzeitangabe verfügbar</span></div>
         )}
-        <div className="product-meta"><span>{product.material ?? "Material prüfen"}</span></div>
+        <div className="product-meta"><span>{product.purpose === "digital" ? /\b(?:ohne WLAN|no wlan)\b/i.test(product.name) ? "Ohne WLAN" : "WLAN / App laut Anbieter" : product.material ?? "Material prüfen"}</span></div>
         <AffiliateLink asin={product.asin} context="product-card" label="Jetzt bei Amazon ansehen" className="affiliate-button product-buy-button" />
         <Link className="card-link" href={`/produkt/${product.id}`}>Details & Einordnung <span aria-hidden="true">→</span></Link>
       </div>

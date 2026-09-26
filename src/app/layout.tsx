@@ -44,13 +44,14 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             <nav aria-label="Hauptnavigation">
               <Link href="/finder">Finder</Link>
               <Link href="/sortiment">Rahmen</Link>
+              <Link href="/digitale-bilderrahmen">Digitale Bilderrahmen</Link>
               <Link href="/vergleich">Vergleich</Link>
               <Link href="/ratgeber">Rahmenwissen</Link>
               <Link className="nav-cta" href="/finder">Jetzt finden</Link>
             </nav>
             <details className="mobile-menu">
               <summary>Menü</summary>
-              <div><Link href="/finder">Finder</Link><Link href="/sortiment">Rahmen</Link><Link href="/vergleich">Vergleich</Link><Link href="/ratgeber">Rahmenwissen</Link><Link href="/so-funktionierts">Methodik</Link></div>
+              <div><Link href="/finder">Finder</Link><Link href="/sortiment">Rahmen</Link><Link href="/digitale-bilderrahmen">Digitale Bilderrahmen</Link><Link href="/vergleich">Vergleich</Link><Link href="/ratgeber">Rahmenwissen</Link><Link href="/so-funktionierts">Methodik</Link></div>
             </details>
           </div>
         </header>
@@ -58,7 +59,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <footer className="site-footer">
           <div className="shell footer-inner">
             <div><Link className="brand" href="/" aria-label="bilderrahmen-finder.de Startseite"><span className="brand-mark" aria-hidden="true"><Image src="/brand/bilderrahmen-finder-icon.png" alt="" width={48} height={48} /></span><span>bilderrahmen-<strong>finder</strong>.de</span></Link><p>Orientierung für Bilder, die bleiben.</p></div>
-            <div className="footer-links"><strong>Entdecken</strong><Link href="/finder">Finder</Link><Link href="/sortiment">Rahmen</Link><Link href="/vergleich">Vergleich</Link><Link href="/ratgeber">Rahmenwissen</Link><Link href="/so-funktionierts">Empfehlungslogik</Link></div>
+            <div className="footer-links"><strong>Entdecken</strong><Link href="/finder">Finder</Link><Link href="/sortiment">Rahmen</Link><Link href="/digitale-bilderrahmen">Digitale Bilderrahmen</Link><Link href="/vergleich">Vergleich</Link><Link href="/ratgeber">Rahmenwissen</Link><Link href="/so-funktionierts">Empfehlungslogik</Link></div>
             <div className="footer-links"><strong>Vertrauen</strong><Link href="/ueber-uns">Über uns</Link><Link href="/affiliate-transparenz">Affiliate-Transparenz</Link><Link href="/kontakt">Kontakt</Link></div>
             <div className="footer-links"><strong>Rechtliches</strong><Link href="/impressum">Impressum</Link><Link href="/datenschutz">Datenschutz</Link></div>
           </div>

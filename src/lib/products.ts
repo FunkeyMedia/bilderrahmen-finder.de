@@ -3,6 +3,7 @@ import type { Product } from "./types";
 
 export const products = catalog as Product[];
 export const frames = products.filter((product) => product.kind === "frame");
+export const digitalFrames = frames.filter((product) => product.purpose === "digital");
 export const accessories = products.filter((product) => product.kind === "accessory");
 
 export function getProduct(id: string) {
@@ -11,7 +12,7 @@ export function getProduct(id: string) {
 
 export function relatedProducts(product: Product, limit = 3) {
   return products
-    .filter((candidate) => candidate.id !== product.id && candidate.kind === product.kind)
+    .filter((candidate) => candidate.id !== product.id && candidate.kind === product.kind && (candidate.purpose === "digital") === (product.purpose === "digital"))
     .map((candidate) => ({
       candidate,
       affinity:

@@ -1,0 +1,73 @@
+.page { overflow: hidden; }
+.hero { display: grid; grid-template-columns: 1.05fr .95fr; align-items: center; gap: clamp(40px, 7vw, 100px); padding-block: 86px 100px; }
+.hero h1 { max-width: 690px; margin: 0; font-size: clamp(48px, 5.5vw, 78px); }
+.hero h1 em { display: block; color: var(--coral-dark); font-weight: 500; }
+.hero > div:first-child > p:last-of-type { max-width: 640px; margin: 28px 0 0; color: var(--ink-soft); font-size: clamp(18px, 2vw, 21px); }
+.heroActions { display: flex; align-items: center; flex-wrap: wrap; gap: 30px; margin-top: 34px; }
+.heroVisual { min-height: 460px; position: relative; display: grid; place-items: center; background: var(--mint); border: 1px solid var(--ink); box-shadow: 18px 18px 0 var(--lime); }
+.heroVisual::before { content: ""; position: absolute; width: 78%; aspect-ratio: 1; border-radius: 50%; background: #e9b2a1; transform: translate(18%, -12%); }
+.heroFrame { position: relative; width: 66%; aspect-ratio: 4 / 3; display: grid; place-items: center; background: #143236; border: 12px solid #12272a; outline: 5px solid #f7eee2; box-shadow: 0 24px 38px rgb(19 45 47 / 28%); transform: rotate(-5deg); }
+.heroFrame::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 70% 28%, #f6d6a5 0 7%, transparent 8%), linear-gradient(155deg, transparent 0 40%, #7a9a91 40% 60%, #415d61 60% 100%), linear-gradient(25deg, #e7a881, #e8d4a0 58%, #a7d8cd); }
+.heroFrame span { position: relative; align-self: end; margin-bottom: 18px; color: white; font: italic 34px Georgia, serif; text-shadow: 0 2px 8px #143236; }
+.heroNote { position: absolute; right: -4%; bottom: 7%; padding: 13px 18px; background: var(--white); border: 1px solid var(--ink); box-shadow: 5px 5px 0 var(--coral); font-weight: 800; transform: rotate(3deg); }
+.quickLinks { background: var(--ink); color: white; }
+.quickLinks > div { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.quickLinks a { display: flex; justify-content: space-between; gap: 12px; padding: 22px 18px; border-inline-start: 1px solid #5a7373; text-decoration: none; font-weight: 750; }
+.quickLinks a:last-child { border-inline-end: 1px solid #5a7373; }
+.quickLinks a:hover { background: #28484a; }
+.intro { padding-block: 112px 104px; }
+.guideGrid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.guideGrid article { padding: 24px; background: var(--white); border: 1px solid var(--ink); border-top: 5px solid var(--coral); }
+.guideGrid article:nth-child(2) { border-top-color: var(--mint); }
+.guideGrid article:nth-child(3) { border-top-color: var(--lime); }
+.guideGrid article:nth-child(4) { border-top-color: var(--ink); }
+.guideGrid article > span { color: var(--coral-dark); font-size: 11px; font-weight: 850; letter-spacing: .08em; text-transform: uppercase; }
+.guideGrid h3 { margin: 18px 0 10px; font: 500 28px/1.1 Georgia, serif; }
+.guideGrid p { margin: 0; color: var(--ink-soft); font-size: 14px; }
+.guideGrid a { font-weight: 800; text-underline-offset: 3px; }
+.productSection { padding-block: 28px 116px; }
+.sectionIntro { max-width: 830px; margin: -15px 0 34px; color: var(--ink-soft); font-size: 16px; }
+.amazonGrid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
+.amazonGrid :global(.product-card.compact .product-image) { min-height: 205px; }
+.amazonGrid :global(.product-card-body) { padding: 18px; }
+.manufacturerSection { padding-block: 100px 112px; background: #e9e1d4; border-block: 1px solid var(--line); }
+.modelGrid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+.modelCard { display: flex; min-width: 0; flex-direction: column; background: var(--white); border: 1px solid var(--ink); }
+.modelVisual { min-height: 215px; display: grid; align-content: center; justify-items: center; gap: 14px; background: #e7c5b8; overflow: hidden; }
+.visualMint { background: #bdd9cc; }
+.visualLime { background: #dce8ab; }
+.screen { width: 55%; aspect-ratio: 16 / 10; display: grid; place-items: center; background: linear-gradient(155deg, #e9bd98, #9fc7bb 50%, #4a706f 51%, #203f45); border: 10px solid var(--ink); box-shadow: 10px 12px 0 rgb(21 44 46 / 17%); transform: rotate(-4deg); }
+.modelCard:nth-child(3n + 2) .screen { transform: rotate(4deg); }
+.screen span { padding: 5px 9px; color: var(--ink); background: var(--white); font-size: 12px; font-weight: 900; }
+.modelVisual small { color: var(--ink-soft); font-size: 10px; }
+.modelBody { flex: 1; display: flex; flex-direction: column; align-items: flex-start; padding: 26px; }
+.modelKicker { margin: 0 0 9px; color: var(--coral-dark); font-size: 11px; font-weight: 850; letter-spacing: .07em; text-transform: uppercase; }
+.modelBody h3 { margin: 0; font: 500 29px/1.12 Georgia, serif; }
+.modelBody > p:not(.modelKicker) { color: var(--ink-soft); font-size: 14px; }
+.modelDetail { display: inline-block; margin: 6px 0 24px; padding: 6px 10px; background: var(--paper); font-size: 12px; font-weight: 750; }
+.modelBody > a { width: 100%; display: flex; justify-content: space-between; gap: 12px; margin-top: auto; padding: 12px 0 0; border-top: 1px solid var(--line); font-size: 14px; font-weight: 850; text-underline-offset: 4px; }
+.faq { padding-block: 112px 130px; }
+.faq h2 { margin: 0 0 46px; font-size: clamp(42px, 5vw, 66px); }
+.faqGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 60px; }
+.faqGrid article { border-top: 1px solid var(--ink); padding-top: 22px; }
+.faqGrid h3 { margin: 0 0 10px; font: 500 27px/1.17 Georgia, serif; }
+.faqGrid p { max-width: 490px; margin: 0; color: var(--ink-soft); }
+@media (max-width: 980px) {
+  .guideGrid, .amazonGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .modelGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 700px) {
+  .hero { grid-template-columns: 1fr; padding-block: 55px 74px; }
+  .heroVisual { min-height: 345px; margin-right: 14px; }
+  .quickLinks > div { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .quickLinks a:nth-child(2) { border-inline-end: 1px solid #5a7373; }
+  .quickLinks a:nth-child(-n + 2) { border-bottom: 1px solid #5a7373; }
+  .intro, .manufacturerSection, .faq { padding-block: 78px; }
+  .productSection { padding-bottom: 82px; }
+}
+@media (max-width: 560px) {
+  .hero h1 { font-size: clamp(44px, 13vw, 62px); }
+  .guideGrid, .amazonGrid, .modelGrid, .faqGrid { grid-template-columns: 1fr; }
+  .quickLinks a { padding: 16px 10px; font-size: 13px; }
+  .heroNote { right: -2%; font-size: 12px; }
+}

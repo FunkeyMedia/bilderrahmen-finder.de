@@ -69,6 +69,10 @@ export function FinderExperience() {
   }, []);
 
   function choose(value: string) {
+    if (question.key === "purpose" && value === "digital") {
+      router.push("/digitale-bilderrahmen");
+      return;
+    }
     const next = { ...answers, [question.key]: value } as FinderAnswers;
     setAnswers(next);
     try { window.localStorage.setItem("bilderrahmen-finder-progress:v1", JSON.stringify(next)); } catch { /* optional */ }

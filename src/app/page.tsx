@@ -64,6 +64,16 @@ export default function Home() {
 
       <AmazonTopTen />
 
+      <section className="digital-home shell" aria-labelledby="digital-home-title">
+        <div>
+          <p className="eyebrow">Neu im Fokus</p>
+          <h2 id="digital-home-title">Deine Fotos wechseln. <em>Der Lieblingsplatz bleibt.</em></h2>
+          <p>Entdecke digitale Bilderrahmen mit WLAN und App, einfache Modelle ohne WLAN und große Displays für die ganze Familie.</p>
+          <Link className="button button-primary" href="/digitale-bilderrahmen">Digitale Bilderrahmen entdecken →</Link>
+        </div>
+        <ul aria-label="Themen der neuen Rubrik"><li>WLAN & Frameo-App</li><li>Ohne WLAN</li><li>15,6 Zoll und größer</li><li>Modelle der Hersteller</li></ul>
+      </section>
+
       <section className="pathways shell" aria-labelledby="pathways-title">
         <div className="section-heading">
           <div><p className="eyebrow">Zwei Wege zum passenden Rahmen</p><h2 id="pathways-title">Lass dich führen. Oder entdecke selbst.</h2></div>

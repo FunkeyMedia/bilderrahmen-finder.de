@@ -80,6 +80,15 @@ h1, h2 { font-family: Georgia, "Times New Roman", serif; font-weight: 500; lette
 .proof-grid strong { font: 500 34px/1 Georgia, serif; }
 .proof-grid span { margin-top: 9px; font-size: 13px; font-weight: 700; }
 
+.digital-home { display: grid; grid-template-columns: 1.25fr .75fr; gap: clamp(35px, 8vw, 100px); align-items: center; padding-block: 85px; border-bottom: 1px solid var(--line); }
+.digital-home h2 { max-width: 700px; margin: 0; font-size: clamp(40px, 4.7vw, 64px); }
+.digital-home h2 em { color: var(--coral-dark); font-weight: 500; }
+.digital-home p:not(.eyebrow) { max-width: 640px; margin: 23px 0 28px; color: var(--ink-soft); font-size: 18px; }
+.digital-home ul { display: grid; gap: 12px; margin: 0; padding: 28px; background: var(--mint); border: 1px solid var(--ink); box-shadow: 10px 10px 0 var(--lime); list-style: none; }
+.digital-home li { padding: 10px 0; border-bottom: 1px solid var(--ink); font-weight: 800; }
+.digital-home li:last-child { border: 0; }
+.digital-home li::before { content: "✦"; margin-right: 12px; color: var(--coral-dark); }
+
 .pathways { padding-block: 110px 20px; }
 .pathways .section-heading { margin-bottom: 38px; }
 .pathway-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
@@ -432,6 +441,7 @@ h1, h2 { font-family: Georgia, "Times New Roman", serif; font-weight: 500; lette
   .mobile-menu div { position: absolute; right: 0; top: 52px; width: min(280px, 85vw); display: grid; padding: 12px; background: var(--white); border: 1px solid var(--ink); box-shadow: var(--shadow); }
   .mobile-menu a { min-height: 48px; display: flex; align-items: center; padding: 8px; text-decoration: none; font-weight: 800; border-bottom: 1px solid var(--line); }
   .hero { grid-template-columns: 1fr; padding-top: 54px; }
+  .digital-home { grid-template-columns: 1fr; }
   .hero-art { min-height: 460px; }
   .proof-grid { grid-template-columns: 1fr 1fr; }
   .proof-grid p { border-bottom: 1px solid var(--ink); }

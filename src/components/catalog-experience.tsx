@@ -27,9 +27,10 @@ const FILTER_GROUPS: FilterGroup[] = [
   {
     key: "kind",
     label: "Was suchst du?",
-    description: "Rahmen oder hilfreiches Zubehör",
+    description: "Klassisch, digital oder Zubehör",
     options: [
-      { value: "frame", label: "Bilderrahmen" },
+      { value: "classic", label: "Klassische Bilderrahmen" },
+      { value: "digital", label: "Digitale Bilderrahmen" },
       { value: "accessory", label: "Zubehör" },
     ],
   },
@@ -148,7 +149,7 @@ function materialKey(product: Product) {
 
 function matchesFilters(product: Product, filters: Filters) {
   const values: Record<FilterKey, string> = {
-    kind: product.kind,
+    kind: product.kind === "accessory" ? "accessory" : product.purpose === "digital" ? "digital" : "classic",
     material: materialKey(product),
     color: product.colorKey,
     shape: productShape(product),
