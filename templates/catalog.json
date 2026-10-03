@@ -1,0 +1,78 @@
+{
+  "repo": "bilderrahmen-finder.de",
+  "domain": "bilderrahmen-finder.de",
+  "slug": "bild-rahmen-aufmass",
+  "title": "Bild & Rahmen: dein Maßblatt",
+  "color": "#2f6158",
+  "pages": [
+    {
+      "title": "Aufmaßblatt für Bild und Rahmen",
+      "intro": "Alle Maße in cm eintragen. Motivmaß, Ausschnitt, Einlegemaß und Außenmaß getrennt erfassen.",
+      "rows": [
+        [
+          [
+            "Motiv / Projekt",
+            "Beispielfoto Waldweg"
+          ],
+          [
+            "Datum",
+            "03.10.2026"
+          ]
+        ],
+        [
+          [
+            "Papier- / Motivbreite (cm)",
+            "21"
+          ],
+          [
+            "Papier- / Motivhöhe (cm)",
+            "29,7"
+          ]
+        ],
+        [
+          [
+            "Sichtbarer Ausschnitt: Breite (cm)",
+            "20"
+          ],
+          [
+            "Sichtbarer Ausschnitt: Höhe (cm)",
+            "28,7"
+          ]
+        ],
+        [
+          [
+            "Rahmen-Einlegemaß: Breite (cm)",
+            "30"
+          ],
+          [
+            "Rahmen-Einlegemaß: Höhe (cm)",
+            "40"
+          ]
+        ],
+        [
+          [
+            "Rahmen-Außenmaß: Breite (cm)",
+            "Laut Maßzeichnung prüfen"
+          ],
+          [
+            "Rahmen-Außenmaß: Höhe (cm)",
+            "Laut Maßzeichnung prüfen"
+          ]
+        ],
+        [
+          [
+            "Hochformat / Querformat",
+            "Hochformat"
+          ],
+          [
+            "Passepartout / Tiefe / Lieferumfang",
+            "Beim Anbieter prüfen"
+          ]
+        ]
+      ],
+      "note": "Einlegemaß ist nicht Außenmaß. Der Passepartout-Ausschnitt und die sichtbare Motivfläche müssen zusammenpassen. Bestellmaße immer mit der Maßzeichnung des konkreten Rahmens abgleichen.",
+      "notes": "Wandfläche, Rahmenprofil und weitere Rückfragen",
+      "example": "Das Beispiel zeigt unterschiedliche Maße. Es ist keine allgemeine Umrechnungsformel und kein reales Produktangebot."
+    }
+  ]
+}

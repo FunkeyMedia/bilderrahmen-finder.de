@@ -7,6 +7,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const routes = ["", "/finder", "/sortiment", "/digitale-bilderrahmen", "/vergleich", "/ratgeber", "/so-funktionierts", "/ueber-uns", "/kontakt", "/affiliate-transparenz", "/impressum", "/datenschutz"];
 
   return [
+    { url: `${SITE_URL}/kostenlose-vorlagen`, lastModified: new Date("2026-10-03"), changeFrequency: "monthly", priority: .8 },
     ...routes.map((route) => ({
       url: `${SITE_URL}${route}`,
       lastModified: ["", "/finder", "/sortiment", "/digitale-bilderrahmen"].includes(route) ? digitalUpdated : originalUpdated,
