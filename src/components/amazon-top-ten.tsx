@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { amazonTopTen } from "@/data/amazon-top-ten";
 import { useAmazonItems } from "@/lib/use-amazon-items";
-import { amazonAffiliateUrl } from "@/lib/config";
+import { amazonAffiliateUrl, amazonTaggedUrl } from "@/lib/config";
 import { AffiliateLink } from "./affiliate-link";
 import { AmazonPrice } from "./amazon-price";
 import styles from "./amazon-top-ten.module.css";
@@ -23,7 +23,7 @@ export function AmazonTopTen() {
         </div>
         <span className={styles.stamp}>TOP <strong>10</strong><span>Amazon-Bestseller</span></span>
       </div>
-      <p className={styles.note}>Rangliste vom <time dateTime={amazonTopTen.checkedAt}>05.09.2026</time> · Nach Verkaufszahlen, kein Qualitätstest. Die Reihenfolge kann sich ändern. <a href={amazonTopTen.sourceUrl} target="_blank" rel="noopener noreferrer">Quelle bei Amazon ↗</a></p>
+      <p className={styles.note}>Rangliste vom <time dateTime={amazonTopTen.checkedAt}>05.09.2026</time> · Nach Verkaufszahlen, kein Qualitätstest. Die Reihenfolge kann sich ändern. <a href={amazonTaggedUrl(amazonTopTen.sourceUrl)} target="_blank" rel="sponsored nofollow noopener noreferrer">Quelle bei Amazon ↗</a></p>
       <ol className={styles.grid} aria-label="Top 10 Bilderrahmen bei Amazon" aria-busy={loading}>
         {amazonTopTen.items.map((product, index) => {
           const live = items[product.asin];
