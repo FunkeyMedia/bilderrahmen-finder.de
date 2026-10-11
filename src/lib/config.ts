@@ -6,3 +6,16 @@ export const DATA_CHECKED_AT = "22.08.2026";
 export function amazonAffiliateUrl(asin: string) {
   return `https://www.amazon.de/dp/${encodeURIComponent(asin)}/?tag=${encodeURIComponent(AMAZON_AFFILIATE_ID)}`;
 }
+
+/** Appends tag= to any Amazon URL that does not already carry one. */
+export function amazonTaggedUrl(url: string): string {
+  try {
+    const u = new URL(url);
+    if (!u.searchParams.has("tag")) {
+      u.searchParams.set("tag", AMAZON_AFFILIATE_ID);
+    }
+    return u.toString();
+  } catch {
+    return url;
+  }
+}
