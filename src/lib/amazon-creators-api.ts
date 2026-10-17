@@ -15,7 +15,7 @@ let tokenCache: TokenCache | null = null;
 function credentials() {
   const clientId = process.env.AMAZON_CREATORS_API_CLIENT_ID;
   const clientSecret = process.env.AMAZON_CREATORS_API_CLIENT_SECRET;
-  const partnerTag = process.env.AMAZON_PARTNER_TAG ?? process.env.NEXT_PUBLIC_AMAZON_AFFILIATE_ID ?? "onlinestarkei-21";
+  const partnerTag = process.env.AMAZON_PARTNER_TAG ?? process.env.NEXT_PUBLIC_AMAZON_AFFILIATE_ID ?? "bilderrahmenfinder-21";
   const version = process.env.AMAZON_CREATORS_API_CREDENTIAL_VERSION ?? "3.2";
   return { clientId, clientSecret, partnerTag, version };
 }
