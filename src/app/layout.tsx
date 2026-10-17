@@ -1,3 +1,4 @@
+import Script from "next/script";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -65,7 +66,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           </div>
           <div className="shell footer-bottom"><p>© 2026 bilderrahmen-finder.de</p><p>Als Amazon-Partner verdienen wir an qualifizierten Verkäufen.</p></div>
         </footer>
-      </body>
+      <aside className="affiliate-tracking-note" style={{textAlign:"center",padding:12,fontSize:12}}><a href="/amazon-klickstatistik.html">Amazon-Klickstatistik / Click measurement</a></aside><Script id="affiliate-amazon-tracking" src="/affiliate-amazon-tracking.js" strategy="afterInteractive" /></body>
     </html>
   );
 }
